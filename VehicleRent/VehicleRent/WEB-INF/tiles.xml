@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC  "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+
+<tiles-definitions>
+    <definition name="base.definition"  template="/WEB-INF/jsp/com/homePage/layout.jsp">
+        <put-attribute name="title" 	value="VehicleRent" />
+        <put-attribute name="header" 	value="/WEB-INF/jsp/com/homePage/header.jsp" />
+        <put-attribute name="menu" 		value="/WEB-INF/jsp/com/homePage/menu.jsp" />
+        <put-attribute name="body" 		value="/WEB-INF/jsp/com/homePage/homePage.jsp" />
+        <put-attribute name="footer" 	value="/WEB-INF/jsp/com/homePage/footer.jsp" />
+    </definition>
+ 
+	<definition name="homePage" extends="base.definition">
+        <put-attribute name="title" value="VehicleRent" />
+        <put-attribute name="body" value="/WEB-INF/jsp/com/homePage/homePage.jsp" />
+	</definition>
+
+	<definition name="generalMaster" extends="base.definition">
+        <put-attribute name="title" value="VehicleRent" />
+        <put-attribute name="body" value="/WEB-INF/jsp/com/master/generalMaster.jsp" />
+	</definition>
+	
+	<definition name="mappingMaster" extends="base.definition">
+        <put-attribute name="title" value="VehicleRent" />
+        <put-attribute name="body" value="/WEB-INF/jsp/com/master/mappingMaster.jsp" />
+	</definition>
+	
+	<definition name="user" extends="base.definition">
+        <put-attribute name="title" value="VehicleRent" />
+        <put-attribute name="body" value="/WEB-INF/jsp/com/user/user.jsp" />
+	</definition>
+
+	<definition name="pswdChange" extends="base.definition">
+        <put-attribute name="title" value="VehicleRent" />
+        <put-attribute name="body" value="/WEB-INF/jsp/com/user/pswdChange.jsp" />
+	</definition>
+	
+	<definition name="accessWizard" extends="base.definition">
+        <put-attribute name="title" value="VehicleRent" />
+        <put-attribute name="body" value="/WEB-INF/jsp/com/user/accessWizard.jsp" />
+	</definition>
+	
+	<definition name="carDetail" extends="base.definition">
+        <put-attribute name="title" value="VehicleRent" />
+        <put-attribute name="body" value="/WEB-INF/jsp/com/operation/carDetail.jsp" />
+	</definition>
+	
+	<definition name="bookingMaster" extends="base.definition">
+        <put-attribute name="title" value="VehicleRent" />
+        <put-attribute name="body" value="/WEB-INF/jsp/com/operation/bookingMaster.jsp" />
+	</definition>
+
+	<definition name="jobWorks" extends="base.definition">
+        <put-attribute name="title" value="VehicleRent" />
+        <put-attribute name="body" value="/WEB-INF/jsp/com/operation/jobWorks.jsp" />
+	</definition>
+	
+	<definition name="vehicleAllocation" extends="base.definition">
+        <put-attribute name="title" value="VehicleRent" />
+        <put-attribute name="body" value="/WEB-INF/jsp/com/operation/vehicleAllocation.jsp" />
+	</definition>
+
+	<definition name="dutySlip" extends="base.definition">
+        <put-attribute name="title" value="VehicleRent" />
+        <put-attribute name="body" value="/WEB-INF/jsp/com/operation/dutySlip.jsp" />
+	</definition>
+
+	<definition name="corporateTariff" extends="base.definition">
+        <put-attribute name="title" value="VehicleRent" />
+        <put-attribute name="body" value="/WEB-INF/jsp/com/master/corporateTariff.jsp" />
+	</definition>
+
+	<definition name="dutySlipReceive" extends="base.definition">
+        <put-attribute name="title" value="VehicleRent" />
+        <put-attribute name="body" value="/WEB-INF/jsp/com/operation/dutySlipReceive.jsp" />
+	</definition>
+
+	<definition name="dutySlipClose" extends="base.definition">
+        <put-attribute name="title" value="VehicleRent" />
+        <put-attribute name="body" value="/WEB-INF/jsp/com/operation/dutySlipClose.jsp" />
+	</definition>
+
+	<definition name="dutySlipUnBilled" extends="base.definition">
+        <put-attribute name="title" value="VehicleRent" />
+        <put-attribute name="body" value="/WEB-INF/jsp/com/operation/dutySlipUnBilled.jsp" />
+	</definition>
+
+	<definition name="dutySlipInvoice" extends="base.definition">
+        <put-attribute name="title" value="VehicleRent" />
+        <put-attribute name="body" value="/WEB-INF/jsp/com/operation/dutySlipInvoice.jsp" />
+	</definition>
+
+	<definition name="relatedInfo" extends="base.definition">
+        <put-attribute name="title" value="VehicleRent" />
+        <put-attribute name="body" value="/WEB-INF/jsp/com/relatedInfo/relatedInfo.jsp" />
+	</definition>
+	
+	<definition name="autorizedUser" extends="base.definition">
+        <put-attribute name="title" value="VehicleRent" />
+        <put-attribute name="body" value="/WEB-INF/jsp/com/corporate/authoriseClientMaster.jsp" />
+	</definition>
+
+	<definition name="corporate" extends="base.definition">
+        <put-attribute name="title" value="VehicleRent" />
+        <put-attribute name="body" value="/WEB-INF/jsp/com/corporate/corporateMaster.jsp" />
+	</definition>
+		
+	<definition name="taxationMaster" extends="base.definition">
+        <put-attribute name="title" value="VehicleRent" />
+        <put-attribute name="body" value="/WEB-INF/jsp/com/master/taxationMaster.jsp" />
+	</definition>
+		
+	<definition name="vendorMaster" extends="base.definition">
+        <put-attribute name="title" value="VehicleRent" />
+        <put-attribute name="body" value="/WEB-INF/jsp/com/master/vendorMaster.jsp" />
+	</definition>
+
+	<definition name="chauffeurMaster" extends="base.definition">
+        <put-attribute name="title" value="VehicleRent" />
+        <put-attribute name="body" value="/WEB-INF/jsp/com/master/chauffeurMaster.jsp" />
+	</definition>
+			
+	<definition name="carAllocation" extends="base.definition">
+        <put-attribute name="title" value="VehicleRent" />
+        <put-attribute name="body" value="/WEB-INF/jsp/com/master/carAllocation.jsp" />
+	</definition>
+	
+	<definition name="report" extends="base.definition">
+        <put-attribute name="title" value="VehicleRent" />
+        <put-attribute name="body" value="/WEB-INF/jsp/com/report/report.jsp" />
+	</definition>
+	
+	<definition name="billing" extends="base.definition">
+        <put-attribute name="title" value="VehicleRent" />
+        <put-attribute name="body" value="/WEB-INF/jsp/com/billing/billing.jsp" />
+	</definition>
+	
+	<definition name="dutySlipClosing" extends="base.definition">
+        <put-attribute name="title" value="VehicleRent" />
+        <put-attribute name="body" value="/WEB-INF/jsp/com/billing/dutySlipClosing.jsp" />
+	</definition>
+
+	<definition name="webBooking" extends="base.definition">
+        <put-attribute name="title" value="VehicleRent" />
+        <put-attribute name="body" value="/WEB-INF/jsp/com/operation/webBooking.jsp" />
+	</definition>
+	
+	<definition name="locationMaster" extends="base.definition">
+        <put-attribute name="title" value="VehicleRent" />
+        <put-attribute name="body" value="/WEB-INF/jsp/com/ets/locationMaster.jsp" />
+	</definition>
+
+	<definition name="tBookingMaster" extends="base.definition">
+        <put-attribute name="title" value="VehicleRent" />
+        <put-attribute name="body" value="/WEB-INF/jsp/com/toursTravels/booking.jsp" />
+	</definition>
+	
+	<definition name="tCustomerMaster" extends="base.definition">
+        <put-attribute name="title" value="VehicleRent" />
+        <put-attribute name="body" value="/WEB-INF/jsp/com/toursTravels/customerMaster.jsp" />
+	</definition>
+	<definition name="rosterMaster" extends="base.definition">
+        <put-attribute name="title" value="VehicleRent" />
+        <put-attribute name="body" value="/WEB-INF/jsp/com/ets/rosterMaster.jsp" />
+	</definition>
+	<definition name="rosterCreation" extends="base.definition">
+        <put-attribute name="title" value="VehicleRent" />
+        <put-attribute name="body" value="/WEB-INF/jsp/com/ets/rosterCreation.jsp" />
+	</definition>
+		
+	<definition name="carStatus" extends="base.definition">
+        <put-attribute name="title" value="VehicleRent" />
+        <put-attribute name="body" value="/WEB-INF/jsp/com/operation/carStatus.jsp"/>
+	</definition>
+	<definition name="tJobWorks" extends="base.definition">
+        <put-attribute name="title" value="VehicleRent" />
+        <put-attribute name="body" value="/WEB-INF/jsp/com/toursTravels/tJobWorks.jsp" />
+	</definition>
+
+	<definition name="bookingRegister" extends="base.definition">
+       <put-attribute name="title" value="VehicleRent" />
+       <put-attribute name="body" value="/WEB-INF/jsp/com/report/bookingRegister.jsp" />
+	</definition>
+
+	<definition name="coveringLetter" extends="base.definition">
+       <put-attribute name="title" value="VehicleRent" />
+       <put-attribute name="body" value="/WEB-INF/jsp/com/report/coveringLetter.jsp" />
+	</definition>
+				
+	<definition name="dataExport" extends="base.definition">
+       <put-attribute name="title" value="VehicleRent" />
+       <put-attribute name="body" value="/WEB-INF/jsp/com/report/dataExport.jsp" />
+	</definition>
+	
+</tiles-definitions>
+	
+	

@@ -1,0 +1,266 @@
+<link href='http://fonts.googleapis.com/css?family=Bitter' rel='stylesheet' type='text/css'>
+<style type="text/css">
+.InputFormStyle{
+    width:450px;
+    padding:30px;
+    margin:40px auto;
+    background: #FFF;
+    border-radius: 10px;
+    -webkit-border-radius:10px;
+    -moz-border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.13);
+    -moz-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.13);
+    -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.13);
+}
+.InputFormStyle .inner-wrap{
+    padding: 10px;
+    background: #F8F8F8;
+    border-radius: 6px;
+    margin-bottom: 5px;
+}
+.InputFormStyle h1{
+    padding: 20px 30px 15px 30px;
+    margin: -30px -30px 30px -30px;
+    border-radius: 10px 10px 0 0;
+    -webkit-border-radius: 10px 10px 0 0;
+    -moz-border-radius: 10px 10px 0 0;
+    color: #fff;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.12);
+    font: normal 30px 'Bitter', serif;
+    -moz-box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.17);
+    -webkit-box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.17);
+    box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.17);
+}
+.InputFormStyle h1 > span{
+    display: block;
+    margin-top: 2px;
+    font: 13px Arial, Helvetica, sans-serif;
+}
+.InputFormStyle label{
+    display: block;
+    font: 12px Arial, Helvetica, sans-serif;
+    color: #6A6A6A;
+    margin-bottom: 5px;
+    margin-left: 5px;
+    
+}
+.InputFormStyle legend{
+    display: block;
+    font: 15px Arial, Helvetica, sans-serif;
+    color: #6A6A6A;
+    margin-left: 15px;
+}
+.InputFormStyle input[type="text"], 
+.InputFormStyle input[type="date"],
+.InputFormStyle input[type="datetime"],
+.InputFormStyle input[type="email"],
+.InputFormStyle input[type="number"],
+.InputFormStyle input[type="search"],
+.InputFormStyle input[type="time"],
+.InputFormStyle input[type="url"],
+.InputFormStyle input[type="password"],
+.InputFormStyle textarea,
+.InputFormStyle select {
+    display: block;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    width: 100%;
+    padding: 2px;
+    border-radius: 6px;
+    -webkit-border-radius:6px;
+    -moz-border-radius:6px;
+    border: 2px solid #fff;
+    box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.33);
+    -moz-box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.33);
+    -webkit-box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.33);
+    font: 13px Arial, Helvetica, sans-serif;
+}
+
+.InputFormStyle .section{
+    font: normal 20px 'Bitter', serif;
+    color: #2A88AD;
+    margin-bottom: 5px;
+}
+.InputFormStyle .section span {
+    background: #2A88AD;
+    padding: 5px 10px 5px 10px;
+    position: absolute;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border: 4px solid #fff;
+    font-size: 14px;
+    margin-left: -45px;
+    color: #fff;
+    margin-top: -3px;
+}
+.InputFormStyle input[type="button"],
+.InputFormStyle input[type="reset"],
+.InputFormStyle input[type="submit"]{
+	 border-top: 1px solid #96d1f8;
+   background: #65a9d7;
+   background: -webkit-gradient(linear, left top, left bottom, from(#3e779d), to(#65a9d7));
+   background: -webkit-linear-gradient(top, #3e779d, #65a9d7);
+   background: -moz-linear-gradient(top, #3e779d, #65a9d7);
+   background: -ms-linear-gradient(top, #3e779d, #65a9d7);
+   background: -o-linear-gradient(top, #3e779d, #65a9d7);
+   padding: 2px 4px;
+   -webkit-border-radius: 4px;
+   -moz-border-radius: 4px;
+   border-radius: 4px;
+   -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   box-shadow: rgba(0,0,0,1) 0 1px 0;
+   text-shadow: rgba(0,0,0,.4) 0 1px 0;
+   color: white;
+   font-size: 14px;
+   font-family: Georgia, serif;
+   text-decoration: none;
+   vertical-align: middle;
+   
+}
+.InputFormStyle input[type="button"]:hover,
+.InputFormStyle input[type="reset"]:hover,
+.InputFormStyle input[type="submit"]:hover{
+}
+
+table.altrowstable {
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:13px;
+	color:#333333;
+	border-width: 1px;
+	border-color: #a9c6c9;
+	border-collapse: collapse;
+}
+table.altrowstable th {
+	background: #2A6881;
+	border-width: 2px;
+	padding: 8px;
+	border-style: solid;
+	border-color: #a9c6c9;
+}
+table.altrowstable td {
+	border-width: 1px;
+	padding: 2px;
+	border-style: solid;
+	border-color: #a9c6c9;
+}
+.oddrowcolor{
+	background-color:#d4e3e5;
+}
+.evenrowcolor{
+	background-color:#c3dde0;
+}
+
+</style>
+
+<style>
+   #content { 
+   	background: white; 
+   	min-height: 400px; 
+   }
+   
+   .tabs { 
+   	list-style: none; 
+   	margin-left:5px;
+   }
+	.tabs li { 
+	  /* Makes a horizontal row */
+		float: left; 
+		
+		/* So the psueudo elements can be
+		   abs. positioned inside */
+		position: relative; 
+	}
+	.tabs a { 
+	  /* Make them block level
+	     and only as wide as they need */
+	  float: left; 
+	  padding: 10px 40px; 
+	  text-decoration: none;
+	  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+	  font: 14px Arial, Helvetica, sans-serif;
+	  /* Default colors */ 
+	  color: green;
+	  background: #ddc385; 
+	  
+	  /* Only round the top corners */
+	  -webkit-border-top-left-radius: 15px;
+	  -webkit-border-top-right-radius: 15px;
+	  -moz-border-radius-topleft: 15px;
+	  -moz-border-radius-topright: 15px;
+	  border-top-left-radius: 15px;
+	  border-top-right-radius: 15px; 
+	}
+	.tabs .active {
+	  /* Highest, active tab is on top */
+	  z-index: 3;
+	}
+	.tabs .active a { 
+	  /* Colors when tab is active */
+	  background: white; 
+	  color: black; 
+	}
+	.tabs li:before, .tabs li:after, 
+	.tabs li a:before, .tabs li a:after {
+	  /* All pseudo elements are 
+	     abs. positioned and on bottom */
+	  position: absolute;
+	  bottom: 0;
+	}
+	/* Only the first, last, and active
+	   tabs need pseudo elements at all */
+	.tabs li:last-child:after,   .tabs li:last-child a:after,
+	.tabs li:first-child:before, .tabs li:first-child a:before,
+	.tabs .active:after,   .tabs .active:before, 
+	.tabs .active a:after, .tabs .active a:before {
+	  content: "";
+	}
+	.tabs .active:before, .tabs .active:after {
+	  background: white; 
+	  
+	  /* Squares below circles */
+	  z-index: 1;
+	}
+	/* Squares */
+	.tabs li:before, .tabs li:after {
+	  background: #ddc385;
+	  width: 10px;
+	  height: 10px;
+	}
+	.tabs li:before {
+	  left: -10px;      
+	}
+	.tabs li:after { 
+	  right: -10px;
+	}
+	/* Circles */
+	.tabs li a:after, .tabs li a:before {
+	  width: 20px; 
+	  height: 20px;
+	  /* Circles are circular */
+	  -webkit-border-radius: 10px;
+	  -moz-border-radius:    10px;
+	  border-radius:         10px;
+	  background: #222;
+	  
+	  /* Circles over squares */
+	  z-index: 2;
+	}
+	.tabs .active a:after, .tabs .active a:before {
+	  background: #ddc385;
+	}
+	/* First and last tabs have different
+	   outside color needs */
+	.tabs li:first-child.active a:before,
+	.tabs li:last-child.active a:after {
+	  background: #222;
+	}
+	.tabs li a:before {
+	  left: -20px;
+	}
+	.tabs li a:after {
+	  right: -20px;
+	}
+</style>

@@ -1,0 +1,207 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<style type="text/css">
+@media print
+   {
+   		@page {
+		      size: auto;   /* auto is the initial value */
+		      margin: 5mm;
+		   }
+		   body {-webkit-print-color-adjust: exact;}
+	      #print {display: none; }
+		  #close {display: none;}
+   }
+select {font-size:12px;}
+A:link {text-decoration: none; color: blue}
+A:visited {text-decoration: none; color: purple}
+A:active {text-decoration: red}
+A:hover {text-decoration: underline; color:red}
+.ft0{font-style:normal;font-weight:bold;font-size:9px;font-family:cambria;color:#000000;}
+.ft1{font-style:normal;font-weight:normal;font-size:9px;font-family:cambria;color:#000000;}
+.ft2{font-style:normal;font-weight:normal;font-size:11px;font-family:cambria;color:#0000ff;}
+.ft3{font-style:normal;font-weight:bold;font-size:14px;font-family:cambria;color:#000000;}
+.ft4{font-style:normal;font-weight:bold;font-size:12px;font-family:cambria;color:#000000;}
+.ft5{font-style:normal;font-weight:normal;font-size:12px;font-family:cambria;color:#000000;}
+.ft6{font-style:normal;font-weight:normal;font-size:38px;font-family:Garamond;color:#000000;}
+.ft7{font-style:normal;font-weight:bold;font-size:16px;font-family:Garamond;color:#000000;}
+.ft9{font-style:normal;font-weight:normal;font-size:8px;font-family:cambria;color:#000000;}
+.ft10{font-style:normal;font-weight:normal;font-size:36px;font-family:cambria;color:#000000;}
+.ft11{font-style:normal;font-weight:bold;font-size:15px;font-family:Garamond;color:#000000;}
+.ft12{font-style:normal;font-weight:bold;font-size:8px;font-family:cambria;color:#000000;}
+</style>
+</head>
+<body vlink="#FFFFFF" link="#FFFFFF" bgcolor="#ffffff">
+<div id="multipleinvoice1" style="position:absolute;left:49%;margin-left:-403px;top:-30px;width:774px;height:auto; margin-top:-11px;overflow:visible;">
+	<div style="position:absolute;top:206;left:90;width: 88%; text-align: center;"><span class="ft11">INVOICE</span></div>
+	<div style="position:absolute;top:113;left:90;width: 88%; text-align: center;"><span class="ft0">Branch Office</span><span class="ft1">: ##BranchOffice##</span></div>
+	<div style="position:absolute;top:125;left:90;width: 88%; text-align: center;"><span class="ft1">Telephone  : ##CompanyMobileNo##, </span><span class="ft2">E-Mail : ##Email##</span></div>
+	<div style="position:absolute;top:146;left:90;width: 88%; text-align: center;"><span class="ft0">Corporate Office</u></span><span class="ft1">: ##CorporateAddress1##</span></div>
+	<div style="position:absolute;top:160;left:90;width: 88%; text-align: center;"><span class="ft1">Telephone  : ##CompanyMobileNo##</span></div>
+	<div style="position:absolute;top:181;left:90;width: 88%; text-align: center;"><span class="ft2"><u>Website:   ##Website##</u></span></div>
+	<div style="position:absolute;top:235;left:98"><span class="ft3">To,</span></div>
+	<div style="position:absolute;top:255;left:98"><span class="ft4">##CorporateName##</span></div>
+	<div style="position:absolute;top:272;left:98;width:40%;"><textarea class="ft1" rows="3" style="width:100%;border: none;outline: none;overflow: none;resize:none;">##ClientAddress1##</textarea></div>
+	<div style="position:absolute;top:255;left:454"><span class="ft5"> Invoice No :</span></div>
+	<div style="position:absolute;top:255;left:527"><span class="ft5">##InvoiceNo##</span></div>
+	<div style="position:absolute;top:276;left:454"><span class="ft5">Invoice Date :</span></div>
+	<div style="position:absolute;top:276;left:527"><span class="ft5">##InvoiceDate##</span></div>
+	<div style="position:absolute;top:295;left:454"><span class="ft5">GSTIN :</span></div>
+	<div style="position:absolute;top:295;left:527"><span class="ft5">##GSTINCorp##</span></div>
+
+	<span style='display:none;'>span for splitting index 0</span>
+	<div id="ds" style="position:absolute;top:325;left:96;width: 653px; height:32px;border-top: 1px solid #000000;border-bottom: 1px solid #000000;"></div>
+	<div style="position:absolute;top:325;left:96;"><span class="ft4">Duty Slip No / </span></div>
+	<div style="position:absolute;top:340;left:96;"><span class="ft4">Car used Date</span></div>
+	<div style="position:absolute;top:332;left:207"><span class="ft4"> Car Type</span></div>
+	<div style="position:absolute;top:332;left:280"><span class="ft4"> Particulars</span></div>
+	<div style="position:absolute;top:332;left:458"><span class="ft4"> Additional</span></div>
+	<div style="position:absolute;top:332;left:580"><span class="ft4"> Rate</span></div>
+	<div style="position:absolute;top:332;left:711"><span class="ft4"> Total</span></div>
+
+	<div style="position:absolute;top:##dutySlipNoStyle##;left:98"><span class="ft0">##DutySlipNo##</span></div>
+	<div style="position:absolute;top:##dutySlipNoStyle##;left:274"><span class="ft4">Charges for :</span></div>
+	<div style="position:absolute;top:##dutySlipNoStyle##;left:344"><span class="ft5">##ChargesFor##</span></div>
+	<div style="position:absolute;top:##dutySlipNoStyle##;left:577"><span class="ft5"> </span></div>
+	<div style="position:absolute;top:##carUsedDateStyle##;left:98"><span class="ft0">##Car used Date##</span></div>
+	<div style="position:absolute;top:##carUsedDateStyle##;left:274"><span class="ft5">##Tariff Scheme Name##</span></div>
+	<div style="position:absolute;top:##carUsedDateStyle##;right:171"><span class="ft5">##Tariff Scheme Rate##</span></div>
+	<div style="position:absolute;top:##carUsedDateStyle##;right:39"><span class="ft5">##Tariff Scheme##</span></div>
+	<div style="position:absolute;top:##carUsedDateStyle##;left:699"><span class="ft5"> </span></div>
+
+	<table style="width:635; position:absolute; top:##carBookedStyle##; left:98px;" cellspacing="0">
+		<tr>
+			<td style="width: 24%;" align="left">
+				<table  border="0" cellspacing="0" style="left:98px;" >
+					<tr style="display:block;">
+						<td class="ft0" style="width: 78px;">Car Booked :</td>
+						<td class="ft1" style="width: 67px; text-align: right">##CarBooked##</td>
+						
+					  </tr>
+					  <tr style="display:block;">
+						<td class="ft0" style="width: 78px;">Car Alloted : </td>
+						<td class="ft1" style="width: 67px; text-align: right"> ##CarAlocated##</td>
+						
+					  </tr>
+					 <tr style="display:block;">
+						<td class="ft5" style="width: 78px;">&nbsp;</td>
+						<td class="ft5" style="width: 67px; text-align: right">&nbsp;</td>
+						
+					  </tr>
+					  <tr style="display:block;">
+						<td class="ft5" style="width: 78px;">&nbsp;</td>
+						<td class="ft5" style="width: 67px; text-align: right">&nbsp;</td>
+						
+					  </tr>
+					  <tr style="display:block;">
+						<td class="ft4" style="width: 78px;">KM Used</td>
+						<td class="ft1" style="width: 67px; text-align: right;">##KM Used##</td>
+						
+					  </tr>
+					 <tr style="display:block;">
+						<td class="ft4" style="width: 78px;">Hrs Used</td>
+						<td class="ft5" style="width: 67px; text-align: right;">##Hrs Used##</td>
+					  </tr>
+				  </table>
+			</td>
+			<td style="width: 73%; position: absolute; left: 175" align="left">
+				<table border ='0'  cellspacing="0">
+				  <tr style="display:block;">
+					<td class="ft5" style="width: 161px;">Extra Hrs</td>
+					<td class="ft5" style="width: 53px; text-align: right">##ExtraHrsNo##</td>
+					<td class="ft5" style="width: 114px; text-align: right">##Extra Hrs##</td>
+					<td class="ft5 tot"  id='extHr' style="width: 132px; text-align: right">##totalExtraHrs##</td>
+				  </tr>
+				  <tr style="display:block;">
+					<td class="ft5" style="width: 161px;">Extra Kms</td>
+					<td class="ft5" style="width: 53px; text-align: right">##ExtraKmNo##</td>
+					<td class="ft5" style="width: 114px; text-align: right">##ExtraKms##</td>
+					<td class="ft5 tot" id='extKm'  style="width: 132px; text-align: right">##totalExtraKms##</td>
+				  </tr>
+				 <tr style="display:block;">
+					<td class="ft5" style="width: 161px;">Day Allowence</td>
+					<td class="ft5" style="width: 53px; text-align: right">##TotalDays##</td>
+					<td class="ft5" style="width: 114px; text-align: right">##Day Allowence Rate##</td>
+					<td class="ft5 tot"  id='out'  style="width: 132px; text-align: right">##Day Allowence##</td>
+				  </tr>
+				  <tr style="display:block;">
+					<td class="ft5" style="width: 161px;">Night Allowence</td>
+					<td class="ft5" style="width: 53px; text-align: right">##TotalNight## </td>
+					<td class="ft5" style="width: 114px; text-align: right">##Night Allowence Rate##</td>
+					<td class="ft5 tot" id='nit'  style="width: 132px; text-align: right">##Night Allowence##</td>
+				  </tr>
+				  <tr style="display:block;">
+					<td class="ft5" style="width: 161px;">Fuel,Guide &amp; Misc Charges</td>
+					<td class="ft5" style="width: 53px; text-align: right">&nbsp;</td>
+					<td class="ft5" style="width: 114px; text-align: right">&nbsp;  </td>
+					<td class="ft5 tot"  id="##misc_Id##" style="width: 132px; text-align: right">##Misc Charges##</td>
+				  </tr>
+				 <tr style="display:block;">
+					<td class="ft5" style="width: 161px;">Parking Charges</td>
+					<td class="ft5" style="width: 53px; text-align: right">&nbsp;</td>
+					<td class="ft5" style="width: 114px; text-align: right">&nbsp; </td>
+					<td class="ft5 tot"  id='##park_Id##' style="width: 132px; text-align: right">##Parking##</td>
+				  </tr>
+				  <tr style="display:block;">
+					<td class="ft5" style="width: 161px;">Toll Charges</td>
+					<td class="ft5" style="width: 53px; text-align: right">&nbsp;</td>
+					<td class="ft5" style="width: 114px; text-align: right">&nbsp; </td>
+					<td class="ft5 tot"  id='##toll_Id##' style="width: 132px; text-align: right">##Toll##</td>
+				  </tr>
+				  <tr style="display:block;">
+					<td class="ft5" style="width: 161px;">Interstate Taxes</td>
+					<td class="ft5" style="width: 53px; text-align: right">&nbsp;</td>
+					<td class="ft5" style="width: 114px; text-align: right">&nbsp;</td>
+					<td class="ft5 tot"  id='##state_Id##'  style="width: 132px; text-align: right">##Interstate Taxes##</td>
+				  </tr>
+			</table>
+		  </td>
+		</tr> 
+		<tr><td colspan="2" style="height:5px;"></td></tr>
+		<tr>
+			<td colspan="2" class="ft5">Vehicle Used at <b>##VehicleUsedAt##</b></td>
+		</tr>
+	</table>
+	<div style="position:absolute;top:##totalStyle##;left:98"><span class="ft5"><b>Booked By :</b> ##BookedBy##</span></div>
+	<div style="position:absolute;top:##totalStyle##;left:380"><span class="ft5"><b>Used By :</b> ##ClientName##</span></div>
+	<div style="position:absolute;top:##totalStyle##;right:39;"><span id="##total_Id##"class="ft4" style="background-color: #FFFFFF;width:21px; height:15px;border-top: 1px solid #000000; border-bottom-style: double;" >##total##</span></div>
+	<div style="top:##height_550Styles##;position:absolute;left:98;color: black; width: 653px;"><hr></div>
+
+	<span style='display:none;'>span for splitting index 1</span>
+	##parkDiv##
+	<div style="position:absolute;top:##grossTotalTop##;left:98"><span class="ft4">Gross Total</span></div>
+	<div style="position:absolute;top:##grossTotalTop##;right:39"><span class="ft4"> ##grosstotal##</span></div>
+	<div style="top:##grossTotalTopLine##;position:absolute;left:98;color: black; width: 653px;"><hr></div>
+
+	<div id="mtax" style="position:absolute;top:##taxDivTop##;left:98;width: 654;height: 75;">##taxDiv##</div>$
+
+	<div style="position:absolute;top:60;left:90; width : 88%; text-align: center;"><span class="ft10">##Company##</span></div>$
+
+	<div id="grandTotWord" style="position:absolute;top:##grandTotalWordStylesTopDiv##;left:96;width: 653px; height:27px;border-top: 1px solid #000000;border-bottom: 1px solid#000000;"></div>$
+	<div style="position:absolute;top:##grandTotalWordStylesTop##;left:98"><span class="ft4" id="grandTotalWord"style="margin-top : 12px; padding-left: 10px; padding-top: 10px; font-size:9px;"></span></div>$
+	<div style="position:absolute;top:##grandTotalWordStylesTop##;left:588"><span class="ft4"> Grand Total     </span></div>$
+	<div style="position:absolute;top:##grandTotalWordStylesTop##;right:39"><span class="ft4">&#x20B9;</span><span class="ft4" id="grand"> ##grandTotal##</span></div>$
+	
+	<div style="position:absolute;top:##EOEStylesTop##;left:98"><span class="ft0">E &amp; O.E.</span></div>$
+	<div style="position:absolute;top:##termsStylesTop##;left:98"><span class="ft0"><u>Terms &amp; Conditions</u></span></div>$
+	<div style="position:absolute;top:##judrificationStylesTop##;left:98"><span class="ft9">Subject to Jurisdiction</span></div>$
+	<div style="position:absolute;top:##ourResponsiplitiesStylesTop##;left:98"><span class="ft9">Our responsibility of the signed duty slip rests till we handover the same to you withthe</span></div>$ 
+	<div style="position:absolute;top:##ourResponsiplitiesStylesTop##;right:25"><span class="ft0"> For ##Company##</span></div>$
+	<div style="position:absolute;top:##interestStylesTop##;left:98"><span class="ft9">Interset @ 18 % will be charged if payment is not received with 30 days from the date of the bill</span></div>$
+	<div style="position:absolute;top:##noObjectionStylesTop##;left:98"><span class="ft9">No objection pertaining to this invoice would be entertained after 7 days from the date</span> </div>$
+	<div style="position:absolute;top:##timeKilometerStylesTop##;left:98"><span class="ft9">Time &amp; Kilometres will be charged from garage to garage.</span></div>$
+	
+	<div style="position:absolute;top:##GSTINStylesTop##;left:98"><span class="ft9">GSTIN :</span></div>$
+	<div style="position:absolute;top:##GSTINStylesTop##;left:131"><span class="ft1"><b>##GSTINBr##</b></span></div>$
+	<div style="position:absolute;top:##panNoStylesTop##;left:98"><span class="ft9">Pan No. : </span></div>$
+	<div style="position:absolute;top:##panNoStylesTop##;left:131"><span class="ft1"><b>##PanNo##</b></span></div>$
+	<div style="position:absolute;top:##SACNoStylesTop##;left:98"><span class="ft9">SAC No. : </span></div>$
+	<div style="position:absolute;top:##SACNoStylesTop##;left:131"><span class="ft1"><b>996601</b></span></div>$
+
+	<div style="position:absolute;top:##bankAcDetailStyleTop##;left:98"><span class="ft9">For Payments, Bank Details are a follows:</span></div>
+	<div style="position:absolute;top:##bankAcDetailStyleTop2##;left:98"><span class="ft1">Account Name    : <b>##Company##</b>	Bank Name : <b>##bankName##</b></span></div>
+	<div style="position:absolute;top:##bankAcDetailStyleTop2##;left:619"><span class="ft0">Authorised Signatory</span></div>$
+	<div style="position:absolute;top:##bankAcDetailStyleTop3##;left:98"><span class="ft1">Bank Account No : <b>##bankAccNo##</b>  				RTGS/NEFT/IFSC : <b>##bankIFSC##</b></span></div>
+</div>
+</body>
+</html>

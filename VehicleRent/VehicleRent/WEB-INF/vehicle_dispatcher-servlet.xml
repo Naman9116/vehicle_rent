@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:p="http://www.springframework.org/schema/p"
+    xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="
+	http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+	http://www.springframework.org/schema/context
+	http://www.springframework.org/schema/context/spring-context-3.0.xsd
+	http://www.springframework.org/schema/mvc 
+	http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd
+	http://www.springframework.org/schema/tx
+	http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+	http://www.springframework.org/schema/util 
+	http://www.springframework.org/schema/util/spring-util-3.0.xsd">
+
+	<mvc:annotation-driven/>
+	<mvc:interceptors>
+		<bean class="com.util.AuthenticationInterceptor" />
+        <mvc:interceptor>
+            <mvc:mapping path="/**/*"/>
+            <bean id="webContentInterceptor" class="org.springframework.web.servlet.mvc.WebContentInterceptor">
+                <property name="cacheSeconds" value="0"/>
+                <property name="useExpiresHeader" value="true"/>
+                <property name="useCacheControlHeader" value="true"/>
+                <property name="useCacheControlNoStore" value="true"/>
+            </bean>
+        </mvc:interceptor>
+    </mvc:interceptors>
+    
+    <context:property-placeholder location="classpath:jdbc.properties" />
+	<tx:annotation-driven transaction-manager="hibernateTransactionManager"/>
+	    
+	<context:component-scan	base-package="com" />
+	
+	<bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+        <property name="host" value="mail.viceroyindia.com" />
+        <property name="port" value="465" />
+        <property name="username" value="bookings@viceroyindia.com" />
+        <property name="password" value="viceroy@4321" />
+        <property name="javaMailProperties">
+            <props>
+                <prop key="mail.transport.protocol">smtp</prop>
+                <prop key="mail.smtp.auth">true</prop>
+                <prop key="mail.smtp.starttls.enable">true</prop>
+            </props>
+        </property>
+    </bean>
+    
+	<bean id="viewResolver"	class="org.springframework.web.servlet.view.UrlBasedViewResolver">
+		<property name="viewClass">
+			<value>org.springframework.web.servlet.view.tiles2.TilesView</value>
+		</property>
+	</bean>
+	<bean id="multipartResolver"  class="org.springframework.web.multipart.commons.CommonsMultipartResolver"/>
+    
+	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver" >
+		<property name="prefix"><value>/WEB-INF/jsp/com/user/</value></property>
+		<property name="suffix"><value>.jsp</value></property>
+	</bean>
+	
+	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix"><value>/WEB-INF/jsp/com/operation/</value></property>
+		<property name="suffix"><value>.jsp</value></property>
+	</bean>
+	<bean id="tilesConfigurer" class="org.springframework.web.servlet.view.tiles2.TilesConfigurer">
+		<property name="definitions">
+			<list>
+				<value>/WEB-INF/tiles.xml</value>
+			</list>
+		</property>
+	</bean>
+	
+	<bean class="org.springframework.context.support.ResourceBundleMessageSource" id="messageSource">
+		<property name="basename" value="messages" />
+	</bean>
+
+	<bean id="hibernateTransactionManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+ 	
+	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="${database.driver}" />
+		<property name="url" value="${database.url}" />
+		<property name="username" value="${database.user}" />
+		<property name="password" value="${database.password}" />
+	</bean>
+
+	<bean id="sessionFactory" class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">${hibernate.dialect}</prop>
+				<prop key="hibernate.show_sql">${hibernate.show_sql}</prop>
+				<prop key="hibernate.hbm2ddl.auto">update</prop>
+			</props>
+		</property>
+		<property name="annotatedClasses">
+			<list>
+				<value>com.appVersion.VersionControlModel</value>
+				<value>com.billing.model.CoverLetterModel</value>
+				<value>com.billing.model.InvoiceModel</value>
+				<value>com.billing.model.InvoiceDetailModel</value>
+				<value>com.common.model.ContactDetailModel</value>
+				<value>com.common.model.AddressDetailModel</value>
+				<value>com.corporate.model.CorporateModel</value>
+				<value>com.corporate.model.AutorizedUserModel</value>
+				<value>com.ets.model.LocationMasterModel</value>
+				<value>com.ets.model.RosterMasterModel</value>
+				<value>com.ets.model.CarRateModel</value>
+				<value>com.master.model.MasterModel</value>
+				<value>com.master.model.MasterMapModel</value>
+				<value>com.master.model.GeneralMasterModel</value>
+				<value>com.master.model.MappingMasterModel</value>
+				<value>com.master.model.CorporateTariffModel</value>
+				<value>com.master.model.StateMasterModel</value>
+				<value>com.master.model.DistrictMasterModel</value>
+				<value>com.master.model.CityMasterModel</value>
+				<value>com.master.model.TaxationModel</value>
+				<value>com.master.model.CorporateTariffDetModel</value>
+				<value>com.master.model.VendorModel</value>
+				<value>com.master.model.ChauffeurModel</value>
+				<value>com.master.model.CarAllocationModel</value>
+				<value>com.master.model.TariffSchemeParaModel</value>
+				<value>com.master.model.CorporateTaxDetModel</value>
+				<value>com.master.model.ChauffeurStatusModel</value>
+				<value>com.operation.model.CarDetailModel</value>
+				<value>com.operation.model.InsuranceDetailModel</value>
+				<value>com.operation.model.TaxDetailModel</value>
+				<value>com.operation.model.StatePermitDetailModel</value>
+				<value>com.operation.model.MaintenanceDetailModel</value>
+				<value>com.operation.model.ServiceDetailModel</value>
+				<value>com.operation.model.BookingMasterModel</value>
+				<value>com.operation.model.BookingDetailModel</value>
+				<value>com.operation.model.VehicleAllocationModel</value>
+				<value>com.operation.model.DutySlipModel</value>
+				<value>com.operation.model.ReservedCarModel</value>
+				<value>com.operation.model.AdditionalDriverDetailModel</value>
+				<value>com.operation.model.DeallocateHistoryModel</value>
+				<value>com.operation.model.HistoryDutySlipModel</value>
+				<value>com.operation.model.TripRoutMapModel</value>
+				<value>com.operation.model.PassengerDetailModel</value>
+				<value>com.relatedInfo.model.RelatedInfoModel</value>
+				<value>com.toursandtravels.model.CustomerModel</value>
+				<value>com.toursandtravels.model.BookingModel</value>
+				<value>com.toursandtravels.model.TDutySlipModel</value>
+				<value>com.user.model.UserModel</value>
+				<value>com.user.model.UserAccessModel</value>
+			</list>
+		</property>
+	</bean>
+</beans>
