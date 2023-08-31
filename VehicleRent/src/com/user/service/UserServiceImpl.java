@@ -65,4 +65,15 @@ public class UserServiceImpl implements UserService{
 		return userDao.getAllowPermission(userId);
 	}
 
+	@Override
+	public String isUsernamePresent(String userName) {
+		return userDao.isUsernamePresent(userName);
+	}
+
+	@Override
+	public Long isExistingUser(String existingUser) {
+		
+		return userDao.isExistingUser(existingUser) ;
+	}
+
 }
