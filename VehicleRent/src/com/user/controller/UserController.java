@@ -108,14 +108,58 @@ public class UserController {
 			return res;
 		}
 		try {
-			if (idForUpdate.trim().equals("") || idForUpdate.trim().equals("0")) {
-				userService.save(userModel);
-				res.setResult(Message.SAVE_SUCCESS_MESSAGE);
-			} else {
-				userModel.setId(Long.valueOf(idForUpdate));
-				userService.update(userModel);
-				res.setResult(Message.UPDATE_SUCCESS_MESSAGE);
+			 String userName = userModel.getUserName().toLowerCase();
+             System.out.println(userName);
+	        // Check for case-sensitive duplicate username using HQL
+            
+             String existingUser = userService.isUsernamePresent(userName) ;
+                   if (existingUser!=null) {		 System.out.println("admin");         
+	        	if (idForUpdate.trim().equals("") || idForUpdate.trim().equals("0") ) {
+	                // If the username already exists and it's not the same user being updated,
+                    // then it's a duplicate.
+	                res.setStatus("Failure");
+	                res.setResult(Message.DUPLICATE_ERROR_MESSAGE);
+	                return res;
+	            
+	        }
+	        }
+		
+		if (idForUpdate.trim().equals("") || idForUpdate.trim().equals("0")) {
+			userModel.setUserName(userName);
+			userService.save(userModel);
+			res.setResult(Message.SAVE_SUCCESS_MESSAGE);
+		} else {
+			if(existingUser!=null) {
+			Long id1 =userService.isExistingUser(existingUser);
+            String existingId = Long.toString(id1);
+			
+			if (!existingId.equals(idForUpdate) ){
+				res.setStatus("Failure");
+                res.setResult(Message.DUPLICATE_ERROR_MESSAGE);
+                return res;
+					
+			   }
+			else {
+	                userModel.setId(Long.valueOf(idForUpdate));
+					userService.update(userModel);
+					res.setResult(Message.UPDATE_SUCCESS_MESSAGE);
 			}
+			}
+			else {
+				 userModel.setId(Long.valueOf(idForUpdate));
+					userService.update(userModel);
+					res.setResult(Message.UPDATE_SUCCESS_MESSAGE);
+			}
+			
+		}
+//			if (idForUpdate.trim().equals("") || idForUpdate.trim().equals("0")) {
+//				userService.save(userModel);
+//				res.setResult(Message.SAVE_SUCCESS_MESSAGE);
+//			} else {
+//				userModel.setId(Long.valueOf(idForUpdate));
+//				userService.update(userModel);
+//				res.setResult(Message.UPDATE_SUCCESS_MESSAGE);
+//			}
 			if(sBase64Image != null){
 				String sType = "Users";
 				String sFileName = idForUpdate;

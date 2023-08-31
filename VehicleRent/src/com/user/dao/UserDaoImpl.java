@@ -6,6 +6,7 @@ import java.util.List;
 import org.hibernate.Criteria;
 import org.hibernate.Query;
 import org.hibernate.SessionFactory;
+import org.hibernate.classic.Session;
 import org.hibernate.criterion.MatchMode;
 import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Restrictions;
@@ -124,5 +125,31 @@ public class UserDaoImpl implements UserDao{
 	@Override
 	public List<UserAccessModel> getAllowPermission(Long userId) {
 		return sessionFactory.getCurrentSession().createQuery("SELECT U FROM UserAccessModel U WHERE userId.id= "+userId+" ").list();	
+	}
+
+	@Override
+	public String isUsernamePresent(String userName) {
+		String hqlQuery = "SELECT u.userName FROM UserModel u WHERE u.userName = :enteredUsername";
+
+	    Session session = sessionFactory.openSession();
+	        Query query = session.createQuery(hqlQuery);
+	        query.setParameter("enteredUsername", userName);
+
+	        String name = (String) query.uniqueResult();
+	        return name; // Returns name if the username is present in the database
+	}
+
+	@Override
+	public Long isExistingUser(String existingUser) {
+
+		String hqlQuery = "SELECT u.id FROM UserModel u WHERE u.userName = :enteredUsername";
+
+	    Session session = sessionFactory.openSession();
+	        Query query = session.createQuery(hqlQuery);
+	        query.setParameter("enteredUsername", existingUser);
+
+	        Long id =  (Long) query.uniqueResult();
+	        return id; // Returns id 
+	        
 	}
 }

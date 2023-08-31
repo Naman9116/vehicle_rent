@@ -22,5 +22,9 @@ public interface UserService {
 	public String saveAllowPermission(String selectedRoleValues, String selectedMenuValues);
 
 	public List<UserAccessModel> getAllowPermission(Long userId);
+
+	public String isUsernamePresent(String userName);
+
+	public Long isExistingUser(String existingUser);
 	
 }
