@@ -143,7 +143,7 @@
 						<td></td>
 						<td><form:label path="engineNo" >Engine No</form:label></td>
 						<td><div id="engine"><Span id="engineNoSpan"  style="color:red">*</span></div></td>
-						<td><form:input path="engineNo" id="engineNo" class="form-control" maxlength="20"></form:input></td>
+						<td><form:input path="engineNo" id="engineNo" class="form-control" maxlength="20"></form:input></td> 
 						<td></td>
 					</tr>
 					<tr>

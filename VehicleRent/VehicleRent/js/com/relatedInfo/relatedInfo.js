@@ -60,10 +60,10 @@
 		form_data.append("airportTerminals", sTerminals);
 		form_data.append("gstin", $('#gstin').val());
 
-		form_data.append("lastBooking",lastBooking);
+		/* form_data.append("lastBooking",lastBooking);
 		form_data.append("lastDS",lastDS);
 		form_data.append("lastInvoice",lastInvoice);
-		form_data.append("lastCoverLetter",lastCoverLetter);
+		form_data.append("lastCoverLetter",lastCoverLetter); */
 		form_data.append("bankName",bankName);
 		form_data.append("bankAccNo",bankAccNo);
 		form_data.append("bankIFSC",bankIFSC);

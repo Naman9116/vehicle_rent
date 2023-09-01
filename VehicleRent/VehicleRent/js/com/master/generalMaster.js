@@ -155,7 +155,7 @@
 	  	$.ajax({  
 		    type: "POST",  	
 		    url:  ctx + "/getDataGridDataGeneralMaster.html",  
-		    data: "masterId="+masterId,
+		    data: "masterId="+  masterId,
 		    success: function(response){
 		      	if(response.status == "Success"){
 					$('#dataTable2').html(response.dataGrid);
