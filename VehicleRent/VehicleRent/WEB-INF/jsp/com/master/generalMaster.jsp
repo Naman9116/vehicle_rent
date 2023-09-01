@@ -18,16 +18,28 @@
 	var masterCode = '${masterCode}';
 	var contextPath="<%=request.getContextPath()%>";
 	var userPageAccess= '<%=sAccess%>';
-	var masterId='${masterDataList[0].id}';
-
-	function onLoadPage(){
+	var masterId='';
+	
+	
+function onLoadPage(){
+		
+		if(masterCode!='ALL'){
+			masterId='${masterDataList[0].id}';
+			getDataGridDataGeneralMaster( );
+		}
 		assignRights();
-		getDataGridDataGeneralMaster();
+		getDataGridDataGeneralMaster(masterId);
 		if(masterCode == "LOC"){
 			$("#extraId").change();
 		}
-	}
-	</script>
+	} // Function to handle changes in the UI list
+   
+function onMasterSelectChange() {
+		
+        masterId = $("#masterId").val(); // Update masterId when a new item is selected
+        onLoadPage(); // Reload the page with the updated masterId
+    }
+</script>
 </HEAD>
 
 <BODY onload="onLoadPage()">
@@ -51,7 +63,8 @@
 						<tr height='35px' id='row1'>
 							<td width=30%><form:label path="masterId">Master Name </form:label></td>
 							<td width=70%>
-								<form:select path="masterId" class="form-control" onchange="getDataGridDataGeneralMaster()">
+								<form:select path="masterId" class="form-control" onchange="onMasterSelectChange()" >
+								     <form:option value="0" label="--- Select ---"/>
 									<form:options items="${masterDataList}" itemValue="id" itemLabel="name"/>	                
 								</form:select>
 							</td>	

@@ -21,7 +21,7 @@ public class VendorMasterValidator implements Validator {
 	public void validate(Object command, Errors errors) {
 		VendorModel vendorModel = (VendorModel)command;
 		if(vendorModel.getName().equals("")) errors.rejectValue("name","Vendor name cannot be blank");
-		if(vendorModel.getPan().equals("")) errors.rejectValue("PAN","PAN cannot be blank");
+		if(vendorModel.getPan()==null) errors.rejectValue("PAN","PAN cannot be blank");
 		if(vendorModel.getAgDate()==null) errors.rejectValue("agDate","Agreement date should provide");
 		if(vendorModel.getOrgTypeId().getId() == null) errors.rejectValue("orgTypeId.id","Organazation Type should provide");
 
