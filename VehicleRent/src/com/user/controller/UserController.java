@@ -108,7 +108,7 @@ public class UserController {
 			return res;
 		}
 		try {
-			 String userName = userModel.getUserName().toLowerCase();
+			 String userName = userModel.getUserName();
              System.out.println(userName);
 	        // Check for case-sensitive duplicate username using HQL
             
