@@ -156,7 +156,7 @@
 								<td></td>
 								<td><form:label path="gstin">GSTIN</form:label></td>
 								<td width="2%"><font color="red">*</font></td>
-								<td><form:input style="width:100%" path="gstin" class="form-control" onkeypress="isAlphaNumeric(event)" maxlength="20"></form:input></td>
+								<td><form:input style="width:100%" path="gstin" class="form-control" onkeypress="isAlphaNumeric(event)" maxlength="15"></form:input></td>
 							</tr>
 							<tr>
 								<td></td>

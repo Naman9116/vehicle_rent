@@ -262,7 +262,6 @@ public class GeneralMasterController {
 			BindingResult bindingResult ,
 			@RequestParam("masterId") String master){
 		
-		
 		if(master!="") {
 			masterId=Long.parseLong(master);
 		}

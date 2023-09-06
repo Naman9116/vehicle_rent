@@ -2820,7 +2820,6 @@ function saveUpdateDutySlipForInvoicing(){
 		var id = this.id;
 		taxAmt.push($("#"+id).val() == "" ? "0": $("#"+id).val());
 	});
-	
 	form_data.append("taxName",taxName);
 	form_data.append("taxPercentage",taxPer);
 	form_data.append("taxValues",taxAmt);
