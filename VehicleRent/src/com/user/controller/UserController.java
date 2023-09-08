@@ -273,6 +273,11 @@ public class UserController {
 		JsonResponse res = new JsonResponse();
 		try {
 			UserModel userModel = userService.formFillForEdit(loginUserId);
+			if(newPass.equals("")||oldPass.equals("")||confPass.equals("")) {
+				res.setResult("Password can't blank");
+				res.setStatus("Failure");
+				return res;
+			}
 			if (!confPass.equals(newPass)) {
 				res.setResult("Retype password is not matched with new password");
 				res.setStatus("Failure");

@@ -23,8 +23,8 @@
 	$(function () {
 	    //Datemask dd/mm/yyyy
 	    $("#efDate").inputmask("dd/mm/yyyy", {"placeholder": "dd/mm/yyyy"});
-//	    $("#taxPer").inputmask("99.99", {"placeholder": ".00"});
-//	    $("#taxVal").inputmask("9999999.99", {"placeholder": ".00"});
+	   // $("#taxPer").inputmask("99.99", {"placeholder": ".00"});
+	   // $("#taxVal").inputmask("9999999.99", {"placeholder": ".00"});
 	});
 
 	</script>
