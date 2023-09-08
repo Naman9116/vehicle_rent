@@ -1,5 +1,8 @@
 package com.master.validator;
 
+import java.util.regex.Pattern;
+import org.apache.commons.lang.StringEscapeUtils;
+
 import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
 import org.springframework.validation.ValidationUtils;
@@ -10,8 +13,8 @@ import com.master.model.TaxationModel;
 
 @Component
 public class TaxationMasterValidator implements Validator {
-
-	@Override
+	
+   @Override
 	public boolean supports(Class<?> c) {
 		return TaxationModel.class.isAssignableFrom(c);
 	}
@@ -27,6 +30,7 @@ public class TaxationMasterValidator implements Validator {
 		}
 		if(taxationModel.getEfDate()==null) errors.rejectValue("efDate","Effective Date cannot be blank");
 		if(!taxationModel.getCalType().equals("C")&&!taxationModel.getCalType().equals("L")) errors.rejectValue("calType","Calculation type should select");
+		
 	}
 
 }

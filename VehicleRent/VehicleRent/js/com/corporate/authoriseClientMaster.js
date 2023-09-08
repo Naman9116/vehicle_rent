@@ -194,7 +194,7 @@ function getLocationASPerCorporate(){
 				'<option value="0">---Select---</option>');
 				/*Fill Locations*/
 				$.each(response.locationMasterModelList, function(index,val) {
-					$("#location").append('<option value="'+val.id+'">' + val.location+ '</option>');
+					$("#location").append('<option value="'+val.id+'">' + val.location.name+ '</option>');
 					if(val.city != "" && val.city != null){ 
 						mCity[val.city.id] = val.city.name;
 					}
