@@ -1,5 +1,8 @@
 package com.user.controller;
 
+import java.io.FileOutputStream;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -25,6 +28,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.multipart.commons.CommonsMultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.common.service.MasterDataService;
@@ -98,7 +103,8 @@ public class UserController {
 	public @ResponseBody JsonResponse saveOrUpdateUser(@ModelAttribute(value = "userModel") UserModel userModel,
 			BindingResult bindingResult, @RequestParam("idForUpdate") String idForUpdate,
 			@RequestParam(value = "sBase64Image", required = false) String sBase64Image, 
-			HttpServletRequest request) {
+			 HttpServletRequest request){
+	
 		JsonResponse res = new JsonResponse();
 		/* Saving Profile photo to directory */
 		validator.validate(userModel, bindingResult);
@@ -107,15 +113,61 @@ public class UserController {
 			res.setResult(bindingResult.getAllErrors());
 			return res;
 		}
+		
+		
 		try {
-			if (idForUpdate.trim().equals("") || idForUpdate.trim().equals("0")) {
-				userService.save(userModel);
-				res.setResult(Message.SAVE_SUCCESS_MESSAGE);
-			} else {
-				userModel.setId(Long.valueOf(idForUpdate));
-				userService.update(userModel);
-				res.setResult(Message.UPDATE_SUCCESS_MESSAGE);
+			 String userName = userModel.getUserName();
+             System.out.println(userName);
+	        // Check for case-sensitive duplicate username using HQL
+            
+             String existingUser = userService.isUsernamePresent(userName) ;
+                   if (existingUser!=null) {		 System.out.println("admin");         
+	        	if (idForUpdate.trim().equals("") || idForUpdate.trim().equals("0") ) {
+	                // If the username already exists and it's not the same user being updated,
+                    // then it's a duplicate.
+	                res.setStatus("Failure");
+	                res.setResult(Message.DUPLICATE_ERROR_MESSAGE);
+	                return res;
+	            
+	        }
+	        }
+		
+		if (idForUpdate.trim().equals("") || idForUpdate.trim().equals("0")) {
+			userModel.setUserName(userName);
+			userService.save(userModel);
+			res.setResult(Message.SAVE_SUCCESS_MESSAGE);
+		} else {
+			if(existingUser!=null) {
+			Long id1 =userService.isExistingUser(existingUser);
+            String existingId = Long.toString(id1);
+			
+			if (!existingId.equals(idForUpdate) ){
+				res.setStatus("Failure");
+                res.setResult(Message.DUPLICATE_ERROR_MESSAGE);
+                return res;
+					
+			   }
+			else {
+	                userModel.setId(Long.valueOf(idForUpdate));
+					userService.update(userModel);
+					res.setResult(Message.UPDATE_SUCCESS_MESSAGE);
 			}
+			}
+			else {
+				 userModel.setId(Long.valueOf(idForUpdate));
+					userService.update(userModel);
+					res.setResult(Message.UPDATE_SUCCESS_MESSAGE);
+			}
+			
+		}
+//			if (idForUpdate.trim().equals("") || idForUpdate.trim().equals("0")) {
+//				userService.save(userModel);
+//				res.setResult(Message.SAVE_SUCCESS_MESSAGE);
+//			} else {
+//				userModel.setId(Long.valueOf(idForUpdate));
+//				userService.update(userModel);
+//				res.setResult(Message.UPDATE_SUCCESS_MESSAGE);
+//			}
 			if(sBase64Image != null){
 				String sType = "Users";
 				String sFileName = idForUpdate;
@@ -229,6 +281,11 @@ public class UserController {
 		JsonResponse res = new JsonResponse();
 		try {
 			UserModel userModel = userService.formFillForEdit(loginUserId);
+			if(newPass.equals("")||oldPass.equals("")||confPass.equals("")) {
+				res.setResult("Password can't blank");
+				res.setStatus("Failure");
+				return res;
+			}
 			if (!confPass.equals(newPass)) {
 				res.setResult("Retype password is not matched with new password");
 				res.setStatus("Failure");

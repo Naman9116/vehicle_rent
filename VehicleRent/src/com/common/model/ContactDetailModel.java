@@ -43,7 +43,7 @@ public class ContactDetailModel implements Serializable {
 	@Column(name="officialPhone",updatable=true,nullable=true,length=50,unique=false)
 	private String officialPhone=null;
 
-	@Column(name="personalMobile",updatable=true,nullable=true,length=30,unique=false)
+	@Column(name="personalMobile",updatable=true,nullable=true,length=30,unique=true)
 	private String personalMobile=null;
 
 	@Column(name="officialMobile",updatable=true,nullable=true,length=30,unique=false)

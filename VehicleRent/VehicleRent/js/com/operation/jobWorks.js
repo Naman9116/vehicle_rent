@@ -1414,8 +1414,9 @@
 		$('#error').hide();
 	    }
 	}
-	function fillCurrentHub(branchId,corporateId){		  		 
+	function fillCurrentHub(){		  		 
 	    form_data = new FormData();
+	    var corporateId=$("#corporateId").val();
 	    form_data.append("corporateId",corporateId);
 	    form_data.append("branchId",branchId);
 	    $.ajax({  

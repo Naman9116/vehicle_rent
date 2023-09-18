@@ -19,4 +19,5 @@ public interface MobileWebDao {
 	public List<BookingMasterModel> getBookingAsPerChauffeurId(Long chauffeurId,String flag) ;
 	public String[] getChauffeurDutyCount(Long chauffeurId, String flag);
 	public String saveTripRouteMap(TripRoutMapModel tripRoutMapModel);
+
 }

@@ -156,7 +156,7 @@
 								<td></td>
 								<td><form:label path="gstin">GSTIN</form:label></td>
 								<td width="2%"><font color="red">*</font></td>
-								<td><form:input style="width:100%" path="gstin" class="form-control" onkeypress="isAlphaNumeric(event)" maxlength="20"></form:input></td>
+								<td><form:input style="width:100%" path="gstin" class="form-control" onkeypress="isAlphaNumeric(event)" maxlength="15"></form:input></td>
 							</tr>
 							<tr>
 								<td></td>
@@ -187,7 +187,7 @@
 								<td></td>
 								<td><form:label path="helpLine">Help Line No.</form:label></td>
 								<td></td>
-								<td><form:input style="width:100%" path="helpLine" class="form-control" maxlength="50"></form:input></td>
+								<td><form:input style="width:100%" path="helpLine" class="form-control" onkeypress="isNumeric(event)" maxlength="11"></form:input></td>
 							</tr>
 							<c:if test="${pageFor=='Company'}">
 							<tr>
@@ -235,7 +235,7 @@
 								<td></td>
 								<td><label>Person Contact No.</label></td>
 								<td></td>
-								<td><input id="personalMobile" class="form-control" maxlength="20"></input></td>
+								<td><input id="personalMobile" class="form-control" onkeypress="isNumeric(event)" maxlength="11"></input></td>
 							</tr>
 							<tr>
 								<td></td>

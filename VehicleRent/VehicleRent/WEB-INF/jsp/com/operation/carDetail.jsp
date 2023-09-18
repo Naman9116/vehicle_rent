@@ -143,7 +143,7 @@
 						<td></td>
 						<td><form:label path="engineNo" >Engine No</form:label></td>
 						<td><div id="engine"><Span id="engineNoSpan"  style="color:red">*</span></div></td>
-						<td><form:input path="engineNo" id="engineNo" class="form-control" maxlength="20"></form:input></td>
+						<td><form:input path="engineNo" id="engineNo" class="form-control" maxlength="20"></form:input></td> 
 						<td></td>
 					</tr>
 					<tr>
@@ -293,7 +293,7 @@
 						<td></td>
 						<td><label>Insurance Upto</label></td>
 						<td><Span id="insurenceUptoSpan"  style="color:red">*</span></td>
-						<td><input name="insuEndDate" id="insuEndDate" class="form-control" maxlength="30"></input></td>
+						<td><input name="insuEndDate" id="insuEndDate" class="form-control"  data-inputmask="'alias': 'dd/mm/yyyy'" maxlength="30"></input></td>
 						<td></td>
 					</tr>
 					<tr>
@@ -375,7 +375,7 @@
 						<td></td>
 						<td><form:label path="byerMobile" >Byer Mobile</form:label></td>
 						<td></td>
-						<td><form:input path="byerMobile" id="byerMobile" class="form-control" maxlength="30"></form:input></td>
+						<td><form:input path="byerMobile" id="byerMobile" class="form-control" onkeypress="isNumeric(event)" maxlength="10"></form:input></td>
 						<td></td>
 					</tr>
 					<tr>

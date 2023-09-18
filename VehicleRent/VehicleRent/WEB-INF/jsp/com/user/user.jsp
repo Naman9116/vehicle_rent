@@ -73,9 +73,9 @@
 						<td><form:label path="userFirstName">First Name</form:label></td>
 						<td><form:input path="userFirstName" class="form-control" maxlength="50"></form:input></td>
 						<td><form:label path="userLastName" >Last Name</form:label></td>
-						<td><form:input path="userLastName" class="form-control" maxlength="50"></form:input></td>
+						<td><form:input path="userLastName" class="form-control"  maxlength="50"></form:input></td>
 						<td><form:label path="userMobile">Mobile</form:label></td>
-						<td><form:input path="userMobile" class="form-control" maxlength="50"></form:input></td>
+						<td><form:input path="userMobile" class="form-control" maxlength="11" onkeypress="isNumeric(event)" ></form:input></td>
 						<td><form:label path="branch"> Working Branch(s)</form:label></td>
 						<td>
 				        	<form:select path="assignBranches" multiple="multiple" placeholder="Assign Branches" class="SlectBox" id="assignBranches" name="assignBranches" onChange="checkForSelect()">

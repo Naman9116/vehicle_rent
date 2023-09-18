@@ -79,4 +79,6 @@ public class MobileWebServiceImpl implements MobileWebService {
 	public BookingMasterModel update(BookingMasterModel bookingMasterModel) {
 		return mobileWebDao.update(bookingMasterModel);
 	}
+
+	
 }

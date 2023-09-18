@@ -5,6 +5,7 @@ import java.util.List;
 import org.hibernate.Criteria;
 import org.hibernate.Query;
 import org.hibernate.SessionFactory;
+import org.hibernate.classic.Session;
 import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Projections;
 import org.hibernate.criterion.Restrictions;
@@ -135,5 +136,23 @@ public class AuthorizedUserDaoImpl implements AuthorizedUserDao{
 		String sSql = "FROM GeneralMasterModel WHERE id in (SELECT L.zone.id FROM LocationMasterModel L Where L.corporateId.id="+corporateId +")";
 		zoneMasterModelList= sessionFactory.getCurrentSession().createQuery(sSql).list();
 		return zoneMasterModelList;
+	}
+
+	@Override
+	public Long mobileNoisPresent(String mobileNo) {
+		String hqlQuery = "select count(*)from AutorizedUserModel au where au.entityContact in(select id from ContactDetailModel where personalMobile='"+mobileNo+"'  )";
+	    Session session = sessionFactory.openSession();
+	        Query query = session.createQuery(hqlQuery);
+	        Long count =   (Long) query.uniqueResult();
+	        return count;
+	}
+
+	@Override
+	public Long mobileNoisPresentid(String mobileNo) {
+		String hqlQuery = "select id from AutorizedUserModel au where au.entityContact in(select id from ContactDetailModel where personalMobile='"+mobileNo+"'  )";
+	    Session session = sessionFactory.openSession();
+	        Query query = session.createQuery(hqlQuery);
+	        Long id =   (Long) query.uniqueResult();
+	        return id;
 	}
 }

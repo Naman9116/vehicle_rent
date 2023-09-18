@@ -109,7 +109,7 @@
 						<hr style="border-color:rgb(255, 218, 113);">
 						</td>
 					</tr>	
-					<tr><td width=30% align=left>Login</td>
+					<tr><td width=30% align=left>UserName</td>
 						<td width=70%><form:input path="userName" id="userName" class='form-control' maxlength="50" onBlur="showImage()" style="width:100%" autofocus="autofocus"></form:input></td>
 					</tr>
 					<tr><td colspan=2></td></tr>

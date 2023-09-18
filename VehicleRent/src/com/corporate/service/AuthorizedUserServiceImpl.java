@@ -71,5 +71,17 @@ public class AuthorizedUserServiceImpl implements AuthorizedUserService{
 	public List<GeneralMasterModel> getZoneAsPerCorporate(Long corporateId){
 		return authorizedUserDao.getZoneAsPerCorporate(corporateId);
 	}
+
+	@Override
+	public Long mobileNoisPresent(String mobileNo) {
+		
+		return authorizedUserDao.mobileNoisPresent(mobileNo);
+	}
+
+	@Override
+	public Long mobileNoisPresentid(String mobileNo) {
+		
+		return  authorizedUserDao.mobileNoisPresentid(mobileNo);
+	}
 	
 }

@@ -15,4 +15,5 @@ public final class Message {
 	public static final String DELETE_BUTTON = "<img src='./img/deleteButton.png' border='0' title='Delete' width='20' height='20'/>";
 	public static final String VIEW_BUTTON = "<img src='./img/viewButton.png' border='0' title='View' width='20' height='20'/>";
 	public static final String ACTION_SIZE ="70px"; 
+	public static final String PHONE_ERROR_MASSAGE ="MobileNumber Already Registered ";
 }

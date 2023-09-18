@@ -38,7 +38,7 @@ import com.util.Message;
 public class GeneralMasterController {
 	private static final Logger logger = Logger.getLogger(GeneralMasterController.class);
 	private String masterCode = "";
-	private long masterId = 0;
+	private long masterId = 0L;
 	
 	@Autowired
 	private GeneralMasterService generalMasterService;
@@ -260,9 +260,15 @@ public class GeneralMasterController {
 	public @ResponseBody JsonResponse getDataGridDataGeneralMaster(
 			@ModelAttribute(value="generalMasterModel") GeneralMasterModel generalMasterModel,
 			BindingResult bindingResult ,
-			@RequestParam("masterId") String masterId){
+			@RequestParam("masterId") String master){
+		
+		if(master!="") {
+			masterId=Long.parseLong(master);
+		}
+		
 		JsonResponse res = new JsonResponse();
-		generalMasterModel.setMasterId(masterId.equalsIgnoreCase("")?0:Long.parseLong(masterId));
+		
+		generalMasterModel.setMasterId(master.equalsIgnoreCase("")?0L:Long.parseLong(master));
 		try{
 			res.setDataGrid(showGrid());
 			res.setStatus("Success");
