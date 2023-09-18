@@ -2,7 +2,7 @@
 	saveUpdateUrl = ctx + "/saveOrUpdateAuthorisedUser.html";
 	deleteUrl  = ctx + "/deleteAuthorizedUser.html";
 	var previousPassword="",firstLogin="";
-	var sIsAdmin = "N", sIsClient = "N";
+	var sIsAdmin = "N", sIsClient = "Y";
 	var mCity = new Object();
 	
 	function resetData(){

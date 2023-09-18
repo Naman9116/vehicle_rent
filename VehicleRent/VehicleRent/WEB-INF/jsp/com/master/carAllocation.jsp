@@ -85,9 +85,9 @@
 					<td>
 						<table style="width: 100%;">
 						<tr style="border: 1px solid #EEEEEE">	
-							<td width="5%"><form:input type="text" path="companyShare" id="compShare" name="compShare"  class="form-control percentage" value="0"  maxlength="3" ></form:input></td>
+							<td width="5%"><form:input type="text" path="companyShare" id="compShare" name="compShare"  class="form-control percentage" value="0" onkeypress="isNumeric(event)" maxlength="3" ></form:input></td>
 							<td width="10%" style="border: 2px solid #EEEEEE;text-align: center;"><form:label path="vendorShare">Vendor Share (%)</form:label></td>
-							<td width="5%"><form:input type="text" path="vendorShare" id="vendorShare" name="vendorShare"  class="form-control percentage" value="100"  maxlength="3"></form:input></td>
+							<td width="5%"><form:input type="text" path="vendorShare" id="vendorShare" name="vendorShare"  class="form-control percentage" value="100" onkeypress="isNumeric(event)" maxlength="3"></form:input></td>
 						</tr></table>
 					</td>
 					

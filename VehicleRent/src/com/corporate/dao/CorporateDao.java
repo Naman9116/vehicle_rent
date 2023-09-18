@@ -15,4 +15,6 @@ public interface CorporateDao {
 	public String save(CorporateTaxDetModel corporateTaxDetModel);
 	public List<CorporateTaxDetModel> formFillForEditCT(Long formFillForEditId);
 	public String update(CorporateTaxDetModel corporateTaxDetModel) ;
+	public Long mobileNoisPresent(String mobileNo);
+	public Long mobileNoIdPresent(String mobileNo);
 }

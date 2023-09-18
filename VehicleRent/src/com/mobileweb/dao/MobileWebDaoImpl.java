@@ -153,5 +153,8 @@ public class MobileWebDaoImpl implements MobileWebDao {
 		sessionFactory.getCurrentSession().update(bookingMasterModel);
 		return bookingMasterModel;
 	}
-	
+
+
 }
+	
+

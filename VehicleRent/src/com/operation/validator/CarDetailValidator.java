@@ -36,17 +36,17 @@ public class CarDetailValidator implements Validator {
 		}		
 		if(carDetailModel.getStatus().equals("")) errors.rejectValue("status","Car Status should provide");
 		if( carDetailModel.getOwnType().equals("C")||carDetailModel.getOwnType().equals("V")){
-		for( InsuranceDetailModel insuranceDetailModel : carDetailModel.getInsuranceDetailModel()){
-			if(insuranceDetailModel.getInsuEndDate() != null && insuranceDetailModel.getInsuEndDate().equals("dd/mm/yyyy")) errors.rejectValue("insuranceDetailModel.insuEndDate","Insurance Upto should provide");
-				
-			//if(insuranceDetailModel.getInsuEndDate()==null) errors.rejectValue("insuranceDetailModel.insuEndDate","Insurance Upto should provide");
-		}
-		
-		for( TaxDetailModel taxDetailModel : carDetailModel.getTaxDetailModel()){
-			if(taxDetailModel.getRtoEndDate()!=null) errors.rejectValue("taxDetailModel.rtoEndDate","Permit Upto should provide");
-			if(taxDetailModel.getStatePermitDetailModel().get(0).getEndDate()!=null) errors.rejectValue("taxDetailModel.statePermitDetailModel[0].endDate","Fitness Upto should provide");
-			if(taxDetailModel.getStatePermitDetailModel().get(1).getEndDate()!=null) errors.rejectValue("taxDetailModel.statePermitDetailModel[1].endDate","PUC Upto should provide");
-		}
+//		for( InsuranceDetailModel insuranceDetailModel : carDetailModel.getInsuranceDetailModel()){
+//	         if(insuranceDetailModel.getInsuEndDate() !=null && insuranceDetailModel.getInsuEndDate().equals(" ")) errors.rejectValue("insuranceDetailModel.insuEndDate","Insurance Upto should provide");
+//				
+//			//if(insuranceDetailModel.getInsuEndDate()==null) errors.rejectValue("insuranceDetailModel.insuEndDate","Insurance Upto should provide");
+//		}
+//		
+//		for( TaxDetailModel taxDetailModel : carDetailModel.getTaxDetailModel()){
+//			if(taxDetailModel.getRtoEndDate()!=null) errors.rejectValue("taxDetailModel.rtoEndDate","Permit Upto should provide");
+//			if(taxDetailModel.getStatePermitDetailModel().get(0).getEndDate()!=null) errors.rejectValue("taxDetailModel.statePermitDetailModel[0].endDate","Fitness Upto should provide");
+//			if(taxDetailModel.getStatePermitDetailModel().get(1).getEndDate()!=null) errors.rejectValue("taxDetailModel.statePermitDetailModel[1].endDate","PUC Upto should provide");
+//		}
 	   }
 	}
 }

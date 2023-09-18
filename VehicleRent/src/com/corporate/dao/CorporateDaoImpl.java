@@ -3,7 +3,9 @@ package com.corporate.dao;
 import java.util.List;
 
 import org.hibernate.Criteria;
+import org.hibernate.Query;
 import org.hibernate.SessionFactory;
+import org.hibernate.classic.Session;
 import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Projections;
 import org.hibernate.transform.Transformers;
@@ -112,5 +114,31 @@ public class CorporateDaoImpl implements CorporateDao{
 		System.out.println("update query has been executed ...!!");
 		sessionFactory.getCurrentSession().merge(corporateTaxDetModel);
 		return "updateSuccess";
+	}
+
+	@Override
+	public Long mobileNoisPresent(String mobileNo) {
+		String hqlQuery = "SELECT count(c.id) FROM ContactDetailModel c WHERE c.personalMobile = '"+mobileNo+"'";
+
+	    Session session = sessionFactory.openSession();
+	        Query query = session.createQuery(hqlQuery);
+	
+
+	        Long id =   (Long) query.uniqueResult();
+	        return id;
+	
+	}
+
+	@Override
+	public Long mobileNoIdPresent(String mobileNo) {
+		String hqlQuery = "SELECT c.id FROM ContactDetailModel c WHERE c.personalMobile = '"+mobileNo+"'";
+
+	    Session session = sessionFactory.openSession();
+	        Query query = session.createQuery(hqlQuery);
+	
+
+	        Long id =   (Long) query.uniqueResult();
+	        return id;
+	
 	}
 }
