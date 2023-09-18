@@ -25,4 +25,10 @@ public interface CorporateService {
 	
 	public String update(CorporateTaxDetModel corporateTaxDetModel) ;
 
+	public Long mobileNoisPresent(String mobileNo);
+
+	public Long mobileNoIdPresent(String mobileNo);
+	
+		
+	
 }

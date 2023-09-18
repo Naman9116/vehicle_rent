@@ -21,6 +21,7 @@ public class AuthorisedUserValidator implements Validator {
 		if(autorizedUserModel.getPageFor().equals("Admin")){
 			if(autorizedUserModel.getAuthTypeAdmin().equals("N") && autorizedUserModel.getAuthTypeClient().equals("N")) errors.rejectValue("authTypeAdmin","Please select Authorisation");
 			if(autorizedUserModel.getName().equals("")) errors.rejectValue("name","Authorise name cannot be blank");
+			if(autorizedUserModel.getPswd().length()<8) errors.rejectValue("pswd","Password Can not be less then 8 Character");
 		}else{
 			if(autorizedUserModel.getParentId() == null) errors.rejectValue("parentId","Please select Authoriser");
 			if(autorizedUserModel.getName().equals("")) errors.rejectValue("name","Client name cannot be blank");

@@ -104,15 +104,44 @@ public class AuthorizedUserController {
 		Long corporateId = authorizedUserModel.getCorporateId().getId().longValue();
 		
 		try{
+			String mobileNo =authorizedUserModel.getContactDetailModel().getPersonalMobile();
+			
+			Long existingMobileno = authorizedUserService.mobileNoisPresent(mobileNo) ;
+			
 			if(idForUpdate.trim().equals("") || idForUpdate.trim().equals("0")){
-				authorizedUserService.save(authorizedUserModel);
-				res.setResult(Message.SAVE_SUCCESS_MESSAGE);
+				if(existingMobileno>0) {
+					res.setStatus("Failure");
+	                res.setResult(Message.PHONE_ERROR_MASSAGE);
+	                return res;
+				}
+				else {
+					authorizedUserService.save(authorizedUserModel);
+					res.setResult(Message.SAVE_SUCCESS_MESSAGE);
+				}
 			}
 			else{
-				authorizedUserModel.setId(Long.valueOf(idForUpdate));
-				authorizedUserService.update(authorizedUserModel);
-				res.setResult(Message.UPDATE_SUCCESS_MESSAGE);
-			}
+				if(existingMobileno>0) {
+					long existingMobileid = authorizedUserService.mobileNoisPresentid(mobileNo) ;
+				    long currentId	= Long.valueOf(idForUpdate);
+				    if(existingMobileid != currentId) {
+				    	res.setStatus("Failure");
+		                res.setResult(Message.PHONE_ERROR_MASSAGE);
+		                return res;
+				    }
+				    else {
+				    	authorizedUserModel.setId(Long.valueOf(idForUpdate));
+						authorizedUserService.update(authorizedUserModel);
+						res.setResult(Message.UPDATE_SUCCESS_MESSAGE);
+				    	
+				    }
+				    }
+				    else{
+				    	authorizedUserModel.setId(Long.valueOf(idForUpdate));
+						authorizedUserService.update(authorizedUserModel);
+						res.setResult(Message.UPDATE_SUCCESS_MESSAGE);
+				    
+				    }
+				}
 			res.setStatus("Success");
 		}catch(ConstraintViolationException e){
 			logger.error("",e);
@@ -155,17 +184,17 @@ public class AuthorizedUserController {
 					@RequestParam("idForDelete") String idForDelete,
 					@RequestParam("pageFor") String pageFor){
 		JsonResponse res = new JsonResponse();
-		Long corporateId = 0l;
+		Long corporateId = 0L;
 		try{
 			String sStatus = authorizedUserService.delete(Long.valueOf(idForDelete));
 			AutorizedUserModel autorizedUserModel=authorizedUserService.formFillForEdit(Long.parseLong(idForDelete));
 			corporateId = autorizedUserModel.getCorporateId().getId().longValue();
-			if(sStatus.equals("deleteFailed")){
-				res.setStatus("Failure");
-				res.setResult(Message.FOREIGNKEY_ERROR_MESSAGE);
-			}else{
+			if(sStatus.equals("deleteSuccess")){
 				res.setStatus("Success");
 				res.setResult(Message.DELETE_SUCCESS_MESSAGE);
+			}else{
+				res.setStatus("Failure");
+				res.setResult(Message.FOREIGNKEY_ERROR_MESSAGE);
 			}
 		}
 		catch(DataIntegrityViolationException e){
@@ -173,6 +202,7 @@ public class AuthorizedUserController {
 			res.setStatus("Failure");
 			res.setResult(Message.FOREIGNKEY_ERROR_MESSAGE);
 		}
+
 		catch(Exception e) {
 			logger.error("",e);
 			res.setStatus("Failure");

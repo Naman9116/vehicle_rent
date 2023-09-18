@@ -1,5 +1,8 @@
 package com.user.controller;
 
+import java.io.FileOutputStream;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -25,6 +28,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.multipart.commons.CommonsMultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.common.service.MasterDataService;
@@ -98,7 +103,8 @@ public class UserController {
 	public @ResponseBody JsonResponse saveOrUpdateUser(@ModelAttribute(value = "userModel") UserModel userModel,
 			BindingResult bindingResult, @RequestParam("idForUpdate") String idForUpdate,
 			@RequestParam(value = "sBase64Image", required = false) String sBase64Image, 
-			HttpServletRequest request) {
+			 HttpServletRequest request){
+	
 		JsonResponse res = new JsonResponse();
 		/* Saving Profile photo to directory */
 		validator.validate(userModel, bindingResult);
@@ -107,6 +113,8 @@ public class UserController {
 			res.setResult(bindingResult.getAllErrors());
 			return res;
 		}
+		
+		
 		try {
 			 String userName = userModel.getUserName();
              System.out.println(userName);

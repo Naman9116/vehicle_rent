@@ -115,7 +115,7 @@
 								<td><label>Mobile No.</label></td>
 								<td width="2%"><font color="red">*</font></td>
 								<td>
-									<input id="personalMobile" class="form-control" maxlength="20"></input>
+									<input id="personalMobile" class="form-control"  onkeypress="isNumeric(event)" maxlength="20"></input>
 									<input type='hidden' name='contactDetailModel_id' id='contactDetailModel_id'/>						
 								</td>
 							</tr>

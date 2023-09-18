@@ -18,4 +18,6 @@ public interface AuthorizedUserService {
 	public ContactDetailModel getBookerMobile(Long bookedById);
 	public List<GeneralMasterModel> getZoneAsPerCorporate(Long corporateId);
 	public List<LocationMasterModel> getLocationAsPerCorporate(Long corporateId, Long zoneId);
+	public  Long mobileNoisPresent(String mobileNo);
+	public Long mobileNoisPresentid(String mobileNo);
 }

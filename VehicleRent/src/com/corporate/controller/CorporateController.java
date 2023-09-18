@@ -127,6 +127,10 @@ public class CorporateController {
 		}
 		Long loginUserId = null;
 		try{
+//			String mobileNo =corporateModel.getContactDetailModel().getPersonalMobile();
+		
+//				Long existingMobileno = corporateService.mobileNoisPresent(mobileNo) ;
+			
 			if(session.getAttribute("loginUserId")!=null){
 				loginUserId=(Long) session.getAttribute("loginUserId");
 			}
@@ -135,6 +139,7 @@ public class CorporateController {
 			corporateModel.setEntityAddress(corporateModel.getAddressDetailModel());
 			corporateModel.setEntityContact(corporateModel.getContactDetailModel());
 			if(idForUpdate.trim().equals("") || idForUpdate.trim().equals("0")){
+//				if(existingMobileno<0) {
 				corporateService.save(corporateModel);
 				for(int i= 0;i< id.length; i++){
 					corporateTaxDetModel.setTaxationModelId(id[i]);
@@ -144,10 +149,48 @@ public class CorporateController {
 					corporateTaxDetModel.setTaxVal(taxVal[i]);
 					corporateTaxDetModel.setUserId(loginUserId);
 					corporateService.save(corporateTaxDetModel);
-				}
-				res.setResult(Message.SAVE_SUCCESS_MESSAGE);
+//				}
+				res.setResult(Message.SAVE_SUCCESS_MESSAGE);}
+//				else {
+//					 res.setStatus("Failure");
+//		                res.setResult(Message.PHONE_ERROR_MASSAGE);
+//		                return res;
+//				}
 			}
 			else{
+				
+//				if(existingMobileno>0) {
+//			    Long mobileid=corporateModel.getContactDetailModel().getId();		
+//			    Long mobileNewId=corporateService.mobileNoIdPresent(mobileNo);
+//			    if(mobileid!= mobileNewId) {
+//			    	 res.setStatus("Failure");
+//		                res.setResult(Message.PHONE_ERROR_MASSAGE);
+//		                return res;
+//			   }else {
+//				   corporateModel.setId(Long.valueOf(idForUpdate));
+//					corporateService.update(corporateModel);
+//					if(valueChanged.equalsIgnoreCase("changed")){
+//						for(int i= 0;i< id.length; i++){
+//							Date insDate = dateFormat.parse(currentDate[i]);
+//							corporateTaxDetModel.setTaxationModelId(id[i]);
+//							corporateTaxDetModel.setCorporateModelId(Long.valueOf(idForUpdate));
+//							corporateTaxDetModel.setInsDate(insDate);
+//							corporateTaxDetModel.setTaxVal(taxVal[i]);
+//							corporateTaxDetModel.setUserId(loginUserId);
+//							
+//							if (saveUpdate[i].equals("U")) {
+//								corporateTaxDetModel.setId(idForUpdateTax[i]);
+//								corporateService.update(corporateTaxDetModel);
+//							} else {
+//								corporateService.save(corporateTaxDetModel);
+//							}
+//						}
+//					}
+//					res.setResult(Message.UPDATE_SUCCESS_MESSAGE);
+//			   }
+//			    
+//			    
+//				} else {
 				corporateModel.setId(Long.valueOf(idForUpdate));
 				corporateService.update(corporateModel);
 				if(valueChanged.equalsIgnoreCase("changed")){
@@ -168,7 +211,8 @@ public class CorporateController {
 					}
 				}
 				res.setResult(Message.UPDATE_SUCCESS_MESSAGE);
-			}
+				}
+//			}
 			res.setStatus("Success");
 		}catch(ConstraintViolationException e){
 			logger.error("",e);

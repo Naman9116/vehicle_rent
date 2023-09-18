@@ -71,4 +71,15 @@ public class CorporateServiceImpl implements CorporateService{
 	public String update(CorporateTaxDetModel corporateTaxDetModel) {
 		return corporateDao.update(corporateTaxDetModel);
 	}
+
+	@Override
+	public Long mobileNoisPresent(String mobileNo) {
+		return corporateDao.mobileNoisPresent(mobileNo);
+	}
+
+	@Override
+	public Long mobileNoIdPresent(String mobileNo) {
+		
+		return corporateDao.mobileNoIdPresent(mobileNo);
+	}
 }

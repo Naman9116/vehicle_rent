@@ -115,7 +115,7 @@
 						<td></td>
 						<td><form:label path="helpLineNo">Help Line No.</form:label></td>
 						<td></td>
-						<td><form:input style="width:100%" path="helpLineNo" id="helpLineNo" class="form-control" maxlength="30"></form:input></td>
+						<td><form:input style="width:100%" path="helpLineNo" id="helpLineNo" class="form-control" onkeypress="isNumeric(event)" maxlength="11"></form:input></td>
 					</tr>
 					<tr>
 						<td></td>
@@ -165,7 +165,7 @@
 						<td></td>
 						<td><form:label path="bankAcNo" >Bank A/c No.</form:label></td>
 						<td><font color="red">*</font></td>
-						<td><form:input path="bankAcNo" id="bankAcNo"  class="form-control" maxlength="20"></form:input></td>
+						<td><form:input path="bankAcNo" id="bankAcNo"  class="form-control" onkeypress="isNumeric(event)" maxlength="20"></form:input></td>
 					</tr>
 					<tr>
 						<td></td>
@@ -256,14 +256,14 @@
 						<td width="35%"><form:label path="contPerson">Contact Person</form:label></td>
 						<td width=2%></td>
 						<td width="60%">
-							<form:input path="contPerson" id="contPerson" style="width:100%" class="form-control" onkeypress="isAlphaNumeric(event)" maxlength="50"></form:input>
+							<form:input path="contPerson" id="contPerson" style="width:100%" class="form-control" maxlength="50"></form:input>
 						</td>
 					</tr>
 					<tr>
 						<td></td>
 						<td><form:label path="contPersonMobile">Mobile No.</form:label><span><font color="red">*</font></span></td>
 						<td></td>
-						<td><form:input path="contPersonMobile" id="contPersonMobile" class="form-control" maxlength="20"></form:input></td>
+						<td><form:input path="contPersonMobile" id="contPersonMobile" class="form-control" onkeypress="isNumeric(event)" maxlength="10"></form:input></td>
 					</tr>
 					<tr>
 						<td></td>
